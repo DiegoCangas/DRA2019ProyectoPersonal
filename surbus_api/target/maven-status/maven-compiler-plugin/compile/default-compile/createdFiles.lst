@@ -1,0 +1,5 @@
+ual\dra\surbus_api\modelos\Bus.class
+ual\dra\surbus_api\SurbusApiApplication.class
+ual\dra\surbus_api\repositories\BusRepository.class
+ual\dra\surbus_api\modelos\Parada.class
+ual\dra\surbus_api\repositories\ParadaRepository.class
