@@ -27,7 +27,7 @@ namespace surbus_scrapper
                 doc = cWeb.Load(baseUrl + Nodo.GetAttributeValue("href"));
 
                 var Nodo2 = doc.DocumentNode.CssSelect("div.name").First();
-                string nombreLinea = Nodo2.InnerHtml;
+                string nombreLinea = Nodo2.InnerHtml.Trim();
                 string imagenLinea = baseUrl + doc.DocumentNode.CssSelect("div.info").First().InnerHtml.Split('"')[5];
                 int numeroLinea = int.Parse(doc.DocumentNode.CssSelect("div.icon").First().InnerHtml.Split('>')[11].Split('<')[0].Replace("L",""));
 
@@ -41,11 +41,21 @@ namespace surbus_scrapper
                 {
                     string json = "{\"nombre\":\""+nombreLinea+"\"," + "\"imagen\":\"" + imagenLinea +"\","+
                    "\"numLinea\":\""+numeroLinea+"\"}";
+                    Console.WriteLine(json);
 
                     streamWriter.Write(json);
                     streamWriter.Flush();
-                    streamWriter.Close();
                 }
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var responseText = streamReader.ReadToEnd();
+                    Console.WriteLine(responseText);
+
+                    //Now you have your response.
+                    //or false depending on information in the response     
+                }
+
             }
 
             //Paradas
@@ -55,7 +65,7 @@ namespace surbus_scrapper
                 doc = cWeb.Load(baseUrl + Nodo.GetAttributeValue("href"));
 
                 var Nodo2 = doc.DocumentNode.CssSelect("div.name").First();
-                string nombreParada = Nodo2.InnerHtml;
+                string nombreParada = Nodo2.InnerHtml.Trim();
                 int numeroParada = int.Parse(doc.DocumentNode.CssSelect("div.icon").First().InnerHtml.Split('>')[11].Split('<')[0].Replace("L", ""));
 
                 //Console.WriteLine(nombreParada + "\n" + numeroParada);
@@ -68,12 +78,22 @@ namespace surbus_scrapper
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
                     string json = "{\"name\":\"" + nombreParada + "\"," +
-                   "\"numeroParada\":\"" + numeroParada + "\"}";
+                   "\"numeroParada\":" + numeroParada + "}";
 
+                    Console.WriteLine(json);
                     streamWriter.Write(json);
                     streamWriter.Flush();
-                    streamWriter.Close();
                 }
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var responseText = streamReader.ReadToEnd();
+                    Console.WriteLine(responseText);
+
+                    //Now you have your response.
+                    //or false depending on information in the response     
+                }
+
             }
             //Console.ReadLine();
         }
