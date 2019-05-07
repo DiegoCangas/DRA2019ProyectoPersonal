@@ -4,9 +4,13 @@ services:
     image: mariadb
     restart: always
     environment: 
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: user
       MYSQL_USER: user
       MYSQL_PASSWORD: user
       MYSQL_DATABASE: surbus
     ports:
-      - 3402:3306
+      - 3306:3306
+  spring:
+    build: surbus_api
+    ports:
+      - 8080:8080

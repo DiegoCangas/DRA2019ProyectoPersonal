@@ -1,0 +1,11 @@
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\bin\Debug\netcoreapp2.1\surbus_scrapper.deps.json
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\bin\Debug\netcoreapp2.1\surbus_scrapper.runtimeconfig.json
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\bin\Debug\netcoreapp2.1\surbus_scrapper.runtimeconfig.dev.json
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\bin\Debug\netcoreapp2.1\surbus_scrapper.dll
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\bin\Debug\netcoreapp2.1\surbus_scrapper.pdb
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\obj\Debug\netcoreapp2.1\surbus_scrapper.csprojAssemblyReference.cache
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\obj\Debug\netcoreapp2.1\surbus_scrapper.csproj.CoreCompileInputs.cache
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\obj\Debug\netcoreapp2.1\surbus_scrapper.AssemblyInfoInputs.cache
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\obj\Debug\netcoreapp2.1\surbus_scrapper.AssemblyInfo.cs
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\obj\Debug\netcoreapp2.1\surbus_scrapper.dll
+C:\Users\diego\Desktop\UAL\DRA\Personal_Project_DRA_API\surbus_scrapper\surbus_scrapper\obj\Debug\netcoreapp2.1\surbus_scrapper.pdb

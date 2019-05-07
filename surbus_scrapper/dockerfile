@@ -1,0 +1,4 @@
+FROM microsoft/dotnet:aspnetcore-runtime
+WORKDIR /app
+COPY .\surbus_scrapper\bin\Debug\netcoreapp2.1/surbus_scrapper.dll .
+ENTRYPOINT ["dotnet", "surbus_scrapper.dll"]

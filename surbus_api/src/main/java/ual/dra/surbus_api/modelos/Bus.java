@@ -17,8 +17,11 @@ public class Bus {
     String nombre;
     int numBuses;
     int numLinea;
+    private String imagen;
+
     @ManyToMany(mappedBy = "lineas")
     Set<Parada> paradas;
+    
     public Bus(){
 
     }
@@ -63,6 +66,20 @@ public class Bus {
      */
     public void setNumLinea(int numLinea) {
         this.numLinea = numLinea;
+    }
+
+    /**
+     * @return the imagen
+     */
+    public String getImagen() {
+        return imagen;
+    }
+
+    /**
+     * @param imagen the imagen to set
+     */
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     
 }

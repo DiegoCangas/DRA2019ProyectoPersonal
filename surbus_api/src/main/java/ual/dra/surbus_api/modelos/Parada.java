@@ -16,10 +16,9 @@ public class Parada{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private int numeroParada;
     private String name;
     private String url;
-    private double longitud;
-    private double latitud;
     @ManyToMany
     @JoinTable(
         name = "lineas_de_paradas",
@@ -30,9 +29,6 @@ public class Parada{
     
     public Parada(){
 
-    }
-    public double distanciaPlana(Parada b){
-        return Math.sqrt(Math.pow(longitud-b.longitud,2)+Math.pow(latitud-b.latitud,2));
     }
 
     /**
@@ -62,33 +58,18 @@ public class Parada{
     public void setUrl(String url) {
         this.url = url;
     }
-
     /**
-     * @return the longitud
+     * @return the numeroParada
      */
-    public double getLongitud() {
-        return longitud;
+    public int getNumeroParada() {
+        return numeroParada;
     }
 
     /**
-     * @param longitud the longitud to set
+     * @param numeroParada the numeroParada to set
      */
-    public void setLongitud(double longitud) {
-        this.longitud = longitud;
-    }
-
-    /**
-     * @return the latitud
-     */
-    public double getLatitud() {
-        return latitud;
-    }
-
-    /**
-     * @param latitud the latitud to set
-     */
-    public void setLatitud(double latitud) {
-        this.latitud = latitud;
+    public void setNumeroParada(int numeroParada) {
+        this.numeroParada = numeroParada;
     }
     
 }
