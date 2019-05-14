@@ -23,7 +23,7 @@ public class Parada{
     private String url;
     @ManyToMany
     @JoinTable(
-        name = "lineas_de_paradas",
+        name = "linea_x_parada",
         joinColumns = {@JoinColumn(name = "parada_id")},
         inverseJoinColumns = {@JoinColumn(name = "bus_id")}
     )
