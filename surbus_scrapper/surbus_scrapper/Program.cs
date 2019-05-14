@@ -33,6 +33,7 @@ namespace surbus_scrapper
 
                // Console.WriteLine(nombreLinea + "\n" + imagenLinea + "\n" + numeroLinea);
 
+
                 //Inserccion en la API
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/buses");
                 httpWebRequest.ContentType = "application/json";
@@ -70,7 +71,38 @@ namespace surbus_scrapper
                 var lines = doc.DocumentNode.CssSelect("a.iconLine");
                 List<int> lineas = new List<int>();
                 foreach (var l in lines)
-                    lineas.Add(int.Parse(l.GetAttributeValue("href").Split('/')[3]));
+                {
+                    int numeroLinea = int.Parse(l.GetAttributeValue("href").Split('/')[3]);
+                    lineas.Add(numeroLinea);
+
+                    HtmlDocument doc2 = cWeb.Load("http://localhost:8080/buses/search/findByLinea?numLinea=" + numeroLinea);
+                    //var LineaID = doc2.DocumentNode.InnerHtml.Split("bus")[0].Split("href")[1].Split('"')[2];
+                    //Console.WriteLine(LineaID);
+
+                    //Paradas_X_Linea
+                    var httpWebRequest2 = (HttpWebRequest)WebRequest.Create("http://localhost:8080/paradas/parada_x_linea");
+                    httpWebRequest2.ContentType = "application/json";
+                    httpWebRequest2.Method = "POST";
+                    using (var streamWriter = new StreamWriter(httpWebRequest2.GetRequestStream()))
+                    {
+                        string json = "{\"bus_id\":\"" + numeroLinea + "\"," +
+                       "\"parada_id\":" + numeroParada + "}";
+
+                        Console.WriteLine(json);
+                        streamWriter.Write(json);
+                        streamWriter.Flush();
+                    }
+                    /*var httpResponse2 = (HttpWebResponse)httpWebRequest2.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse2.GetResponseStream()))
+                    {
+                        var responseText = streamReader.ReadToEnd();
+                        Console.WriteLine(responseText);
+
+                        //Now you have your response.
+                        //or false depending on information in the response     
+                    }*/
+
+                }
 
                 Console.WriteLine(lineas[0].ToString());
                 //Console.WriteLine(nombreParada + "\n" + numeroParada);

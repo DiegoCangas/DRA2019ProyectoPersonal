@@ -13,7 +13,7 @@ import ual.dra.surbus_api.modelos.Parada;
 @RepositoryRestResource()
 public interface ParadaRepository extends CrudRepository<Parada, Long>{
 
-   @Query(value = "Select * From parada Where name = '?1'", nativeQuery = true)
+   @Query(value = "Select * From parada Where name LIKE '%?1%'", nativeQuery = true)
    Set<Parada> findByName(String nombre);
   // @Query(value = "Select * From parada Where numeroParada = ?1", nativeQuery = true)
    //Set<Parada> findByNombre(Integer numParada);
